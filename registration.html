@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pet registration </title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: radial-gradient(circle at 10% 20%, rgb(101, 255, 253) 0%, rgb(36, 153, 238) 90%);
+    }
+
+    header {
+            background-color: rgb(22, 24, 69);
+            color: white;
+            padding: 1px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+    main {
+        max-width: 550px;
+        margin: 20px auto;
+        padding: 20px;
+        background: linear-gradient(to right, rgb(173, 83, 137), rgb(60, 16, 83));
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #000000;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background: linear-gradient(to top, #007adf 0%, #00ecbc 100%);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+        background: radial-gradient(circle at 10% 20%, rgb(221, 49, 49) 0%, rgb(119, 0, 0) 90%);
+    }
+</style>
+
+<body>
+    <header>
+        <b><h1>Pet Adoption Platform</h1></b>
+        
+    </header>
+<main>
+    <form id="registration-form">
+        <h2>Register Here..!</h2>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Register</button>
+
+        <div id="success-message" style="display: none; color: rgb(0, 0, 0); margin-top: 10px;">
+            Registration successful! Thank you for registering.
+        </div>
+    </form>
+    
+</main>
+<script>
+    document.getElementById('registration-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get form data
+        var formData = new FormData(this);
+
+        // Display form data (you can replace this with sending data to a server)
+        for (var pair of formData.entries()) {
+            console.log(pair[0] + ': ' + pair[1]);
+        }
+
+        // Simulating successful registration
+        // Here you can perform actual validation and submit the form to a server
+        // For now, we'll just show the success message
+        document.getElementById('success-message').style.display = 'block';
+
+        // You can reset the form after successful submission if needed
+        // this.reset();
+    });
+</script>
+</body>
+</html>
